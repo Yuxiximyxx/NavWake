@@ -115,7 +115,10 @@ class HookEntry : XposedModule() {
                 } else {
                     ModuleLog.i(TAG, "总开关关闭 → 不安装重定向 hook（原 YOYO 行为）")
                 }
-                // ② 探针（阶段 0 的诊断工具，默认关）
+                // ② 单击返回（v0.4.0）：常驻观察点位、按次读开关，默认关时纯放行，
+                //    所以无条件安装 —— 设置页改开关立即生效，不必重启 SystemUI。
+                safely("TapBackHook") { TapBackHook.install(context) }
+                // ③ 探针（阶段 0 的诊断工具，默认关）
                 if (probeMode) installSystemUiProbes(context)
             }
 

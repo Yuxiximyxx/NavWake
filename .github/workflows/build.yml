@@ -1,0 +1,36 @@
+name: Build Release APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install SDK platform 34
+        run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
+
+      # 签名 keystore 不进仓库（.gitignore），由 secret 解码到构建脚本约定的位置；
+      # 口令/别名按 app/build.gradle.kts 中既有配置（仓库内既定值）。
+      - name: Restore signing keystore
+        run: |
+          mkdir -p app/signing
+          echo "${{ secrets.NAVWAKE_KEYSTORE_B64 }}" | base64 -d > app/signing/navwake.jks
+
+      - name: Build release
+        run: ./gradlew :app:assembleRelease --console=plain
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NavWake-release-apk
+          path: app/build/outputs/apk/release/*.apk
+          if-no-files-found: error

@@ -67,6 +67,17 @@ class MainActivity : Activity() {
         })
         body.addView(note("关闭后完全恢复原 YOYO 行为，可随时打开。"))
 
+        // ── 单击返回（v0.4.0，并入原 mback 的功能） ────────────────
+        body.addView(section("单击返回"))
+        body.addView(Switch(this).apply {
+            text = "单击导航条返回"
+            isChecked = NavConfig.tapBackEnabled()
+            setOnCheckedChangeListener { _, checked ->
+                NavConfig.setTapBackEnabled(checked)
+            }
+        })
+        body.addView(note("点一下底部导航条小白条 = 返回一次。和长按唤醒、上滑回桌面/多任务互不影响；改完立即生效，默认关。"))
+
         // ── 可唤起的应用 ──────────────────────────────────────────
         body.addView(section("可唤起的应用"))
         val configured = AppTargets.all(this)

@@ -17,8 +17,8 @@ android {
         // libxposed API 102 要求 minSdk >= 26；本模块是独立 APK，不受被 hook 进程的 minSdk 影响
         minSdk = 26
         targetSdk = 34
-        versionCode = 6
-        versionName = "0.3.0"
+        versionCode = 7
+        versionName = "0.4.0"
     }
 
     signingConfigs {

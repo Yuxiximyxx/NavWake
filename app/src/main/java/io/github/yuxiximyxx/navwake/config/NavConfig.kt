@@ -16,6 +16,7 @@ object NavConfig {
     const val PREFS_NAME = "navwake_settings"
 
     private const val KEY_ENABLED = "redirect_enabled"
+    private const val KEY_TAP_BACK = "tap_back_enabled"
     private const val KEY_DEFAULT_TARGET = "default_target"
     private const val KEY_SELECTED = "selected_packages"
     private const val KEY_LOG_LEVEL = "log_level"
@@ -44,6 +45,15 @@ object NavConfig {
 
     fun setEnabled(value: Boolean) {
         write { it.putBoolean(KEY_ENABLED, value) }
+    }
+
+    // ── 单击返回（v0.4.0 新增，替代单装的 mback） ──────────────────
+
+    /** 单击导航条小白条 = 返回。默认**关**，与重定向总开关互相独立。 */
+    fun tapBackEnabled(): Boolean = prefs?.getBoolean(KEY_TAP_BACK, false) ?: false
+
+    fun setTapBackEnabled(value: Boolean) {
+        write { it.putBoolean(KEY_TAP_BACK, value) }
     }
 
     // ── 默认目标 ────────────────────────────────────────────────────
