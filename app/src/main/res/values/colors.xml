@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#0B1F3A</color>
+    <color name="nw_bg">#0B0F17</color>
+    <color name="nw_surface">#151B26</color>
+    <color name="nw_surface_alt">#1C2432</color>
+    <color name="nw_accent">#C8AA6E</color>
+    <color name="nw_text_primary">#F2F4F8</color>
+    <color name="nw_text_secondary">#93A0B5</color>
+    <color name="nw_divider">#223044</color>
+    <color name="nw_ok">#4CD08A</color>
+    <color name="nw_warn">#F2C14E</color>
+    <color name="nw_danger">#F26D6D</color>
+</resources>

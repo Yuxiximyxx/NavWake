@@ -1,0 +1,6 @@
+name=NavWake
+description=长按导航条改为唤起自选 AI（Muse / Grok Bot / DSH Go）；仅拦截导航条这一路，异常一律回落原 YOYO
+minApiVersion=102
+targetApiVersion=102
+staticScope=true
+autoHotReload=false

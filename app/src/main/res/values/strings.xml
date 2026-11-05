@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">导航条唤醒重定向</string>
+    <string name="app_subtitle">长按导航条改为唤起自选 AI（阶段 0：只打日志）</string>
+    <string name="xposed_description">把手势「长按导航条唤醒 YOYO」重定向到自选的第三方 AI 应用。只做展示层拦截与拉起替换，不碰 YOYO 的账号、数据与服务端交互。当前为阶段 0：只打日志定位，不改变任何行为。</string>
+    <string name="chooser_title">长按唤醒谁？</string>
+</resources>

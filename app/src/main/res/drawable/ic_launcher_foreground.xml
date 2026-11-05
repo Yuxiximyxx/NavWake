@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MagicFree4 启动图标前景：一条圆滚滚的鱼（呼应项目名） -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.62"
+        android:scaleY="0.62"
+        android:translateX="20.5"
+        android:translateY="20.5">
+        <!-- 鱼身 -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M18,32 C18,24 30,18 44,18 C58,18 68,22 74,26 L86,16 L86,48 L74,38 C68,42 58,46 44,46 C30,46 18,40 18,32 Z" />
+        <!-- 眼睛 -->
+        <path
+            android:fillColor="#1B6EF3"
+            android:pathData="M32,30 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+        <!-- 尾鳍分割线 -->
+        <path
+            android:fillColor="#1B6EF3"
+            android:pathData="M78,22 L84,17 L84,47 L78,42 Z" />
+    </group>
+</vector>

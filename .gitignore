@@ -1,0 +1,30 @@
+# Gradle / Android
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+captures/
+.cxx/
+*.apk
+*.aab
+
+# 签名材料（自用时保留本地，发布请用你自己的）
+app/signing/*.jks
+app/signing/*.keystore
+
+# 系统垃圾
+.DS_Store
+
+# 本地 Gradle home（工作区内的依赖缓存副本）
+.gradle-home/
+
+# 内部工作文档，不入公开仓库
+PLAN.md
+docs/stage0-logging-spec.md
+
+# Kotlin 编译守护进程的临时日志
+.kotlin/
+
+# 真机取证与内部文档：含设备标识、已装应用清单，绝不入库
+docs/
