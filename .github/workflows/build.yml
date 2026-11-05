@@ -14,10 +14,11 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - uses: android-actions/setup-android@v3
-
+      #  runner 镜像自带 Android SDK；setup-android@v3 会去装已下架的 legacy tools 包而报错，故不用它
       - name: Install SDK platform 34
-        run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
+        run: |
+          yes | sdkmanager --licenses > /dev/null || true
+          sdkmanager "platforms;android-34" "build-tools;34.0.0"
 
       # 签名 keystore 不进仓库（.gitignore），由 secret 解码到构建脚本约定的位置；
       # 口令/别名按 app/build.gradle.kts 中既有配置（仓库内既定值）。
