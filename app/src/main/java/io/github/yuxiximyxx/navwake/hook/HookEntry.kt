@@ -98,7 +98,8 @@ class HookEntry : XposedModule() {
         ModuleLog.i(
             TAG,
             "安装 pkg=${param.packageName} 探针模式=$probeMode " +
-                "重定向=${NavConfig.enabled()} 默认目标=${App_DefaultTarget()}"
+                "重定向=${NavConfig.enabled()} 单击返回=${NavConfig.tapBackEnabled()} " +
+                "默认目标=${App_DefaultTarget()}"
         )
 
         val context = HookContext(
